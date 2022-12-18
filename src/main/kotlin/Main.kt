@@ -1,33 +1,29 @@
-open class Animal {
-    open val image = ""
-    open val food = ""
-    open val habitat = ""
+abstract class Animal {
+    abstract val image: String
+    abstract val food: String
+    abstract val habitat: String
     open var hunger = 10
 
-    open fun makeNoise() {
-        println("Animal is making a noise")
-    }
+    abstract fun makeNoise()
 
-    open fun eat() {
-        println("Animal is eating")
-    }
+    abstract fun eat()
 
     open fun roam() {
         println("Animal is roaming")
     }
 
-    open fun sleep() {
+    fun sleep() {
         println("Animal is sleeping")
     }
 }
 
-class Feline: Animal() {
+abstract class Feline: Animal() {
     override fun roam() {
         println("Feline is roaming")
     }
 }
 
-class Canine: Animal() {
+abstract class Canine: Animal() {
     override fun roam() {
         println("Canine is roaming")
     }
@@ -48,9 +44,75 @@ class Hippo: Animal() {
 }
 
 class Lion: Feline() {
-    override val
+    override val food = "meat"
+    override val habitat = "forest"
+    override val image = "lion.png"
+
+    override fun makeNoise() {
+        println("Roar!!!!")
+    }
+
+    override fun eat(){
+        println("Lion is eating a full cow")
+    }
 }
 
-class Cheetah: Feline(){
+class Cheetah: Feline() {
+    override val food = "meat"
+    override val habitat = "forest"
+    override val image = "cheetah.png"
+
+    override fun makeNoise() {
+        println("EEEEEyyyyen!!!!")
+    }
+
+    override fun eat(){
+        println("Cheetah is eating a full cow")
+    }
+}
+
+class Lynx: Feline() {
+    override val food = "meat"
+    override val habitat = "forest"
+    override val image = "lynx.png"
+
+    override fun makeNoise() {
+        println("Lyyyyynnnnnnnnnnnnnn!!!!")
+    }
+
+    override fun eat(){
+        println("Lynx is eating a full cow")
+    }
+}
+
+class Fox: Canine() {
+    override val food = "meat"
+    override val habitat = "forest"
+    override val image = "fox.png"
+
+    override fun makeNoise() {
+        println("Yaaaaaaaaaaaaaaaaahhhhhhh!!!!")
+    }
+
+    override fun eat(){
+        println("Fox is eating a full cow")
+    }
+}
+
+class Wolf: Canine() {
+    override val food = "meat"
+    override val habitat = "forest"
+    override val image = "wolf.png"
+
+    override fun makeNoise() {
+        println("Huuuuuuuuuuuuuuuuaaaaaaaaah!!!!")
+    }
+
+    override fun eat(){
+        println("Wolf is eating a full cow")
+    }
+}
+
+fun main() {
 
 }
